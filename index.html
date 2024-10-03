@@ -110,7 +110,8 @@
                 sortedVersions.forEach(version => {
                     const option = document.createElement('option');
                     option.value = version;
-                    option.textContent = version;
+                    const bugCount = versions[version].bugs.length;
+                    option.textContent = `${version} (${bugCount} ${bugCount === 1 ? 'bug' : 'bugs'})`;
                     versionSelect.appendChild(option);
                 });
 
